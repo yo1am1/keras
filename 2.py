@@ -39,7 +39,7 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # Побудова та тренування моделі для кожного значення dropout
-for dropout_rate in [0, 0.3, 0.5, 0.9]:
+for dropout_rate in [0, 0.3, 0.9]:
     model = Sequential()
     model.add(Dense(64, input_dim=X_train.shape[1], activation="relu"))
     model.add(Dropout(dropout_rate))
